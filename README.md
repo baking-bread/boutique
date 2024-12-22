@@ -19,7 +19,6 @@ This project is currently in the initialisation phase and does not review nor ac
 ### 01 - Initialisation
 
 - [x] Setup Local Development
-- [ ] Setup Codespaces
 - [x] Setup GitHooks
 - [x] Setup Changelog
 - [x] Setup Makefile
@@ -30,12 +29,14 @@ This project is currently in the initialisation phase and does not review nor ac
 - [ ] Define Basic Architecture
 - [x] Setup README
 - [ ] Define Roadmap to MVP
-- [ ] Define Roadmap to Plugin System
-- [ ] Setup Badges
-- [ ] Setup CI Pipeline
-- [ ] Setup Release Pipeline
+- [x] Setup CI Pipeline
 
 ### 02 - MVP
+
+- [ ] Setup Release Pipeline
+- [ ] Setup Badges
+- [ ] Define Roadmap to Plugin System
+- [ ] Setup Codespaces
 
 ### 03 - Plugin System
 
