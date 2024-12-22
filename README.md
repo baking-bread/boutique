@@ -4,6 +4,8 @@
     </a>
 </p>
 
+![CodeQL](https://github.com/baking-bread/boutique/actions/workflows/codeql.yaml/badge.svg?branch=main&event=push)
+
 # Boutique - A modern internal developer portal
 
 This project is currently in the initialisation phase and does not review nor accept merge requests.
