@@ -4,11 +4,9 @@
     </a>
 </p>
 
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
-
 # Boutique - A modern internal developer portal
 
-This repositories is currently in the initialisation phase and does not review nor accept merge requests.
+This project is currently in the initialisation phase and does not review nor accept merge requests.
 
 ## Getting Started
 
