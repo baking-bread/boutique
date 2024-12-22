@@ -1,22 +1,36 @@
+<p align="center">
+    <a href="https://github.com/baking-bread/boutique" target="_blank">
+        <img width="50%" src="./assets/logo.png" alt="Boutique logo">
+    </a>
+</p>
+
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
+
 # Boutique - A modern internal developer portal
 
 This repositories is currently in the initialisation phase and does not review nor accept merge requests.
+
+## Getting Started
+
+### Prerequisites
+
+### Usage
 
 ## Roadmap
 
 ### 01 - Initialisation
 
-- [ ] Setup Local Development
+- [x] Setup Local Development
 - [ ] Setup Codespaces
 - [x] Setup GitHooks
-- [ ] Setup Changelog
-- [ ] Setup Makefile
-- [ ] Setup Tests
+- [x] Setup Changelog
+- [x] Setup Makefile
+- [x] Setup Tests
 - [ ] Define Architecture Principles
 - [ ] Setup Architecture Tests
 - [ ] Define Domain
 - [ ] Define Basic Architecture
-- [ ] Setup README
+- [x] Setup README
 - [ ] Define Roadmap to MVP
 - [ ] Define Roadmap to Plugin System
 - [ ] Setup Badges
@@ -28,3 +42,14 @@ This repositories is currently in the initialisation phase and does not review n
 ### 03 - Plugin System
 
 ### 05 - Stabilization
+
+## Contributing
+
+## Support
+
+## Acknowledgements
+
+Thanks for these awesome resources that were used during development:
+
+- https://github.com/olivierlacan/keep-a-changelog
+- https://github.com/conventional-commits/conventionalcommits.org
