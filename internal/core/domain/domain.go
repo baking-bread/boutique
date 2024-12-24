@@ -1,7 +1,33 @@
 package domain
 
-type TemplateDependency struct{}
+import catalogtype "github.com/baking-bread/boutique/internal/core/domain/enum/catalog_type"
 
-type TemplatePolicy struct{}
+// Contains a collection of templates and or packages
+type Catalog struct {
+	Type catalogtype.CatalogType
+}
 
-type TemplateInstance struct{}
+type Chart struct {
+	Catalog   Catalog
+	Path      string // item location within catalog
+	Ref       string // for versioning
+	Config    TemplateConfiguration
+	Templates []TemplateContent
+
+	// policies
+}
+
+type TemplateConfiguration struct{}
+type TemplateContent struct{}
+
+type Package struct {
+	Catalog   Catalog
+	Path      string
+	Ref       string
+	Instances []InstanceContent
+
+	// history
+	// status
+}
+
+type InstanceContent struct{}

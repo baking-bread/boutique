@@ -27,10 +27,10 @@ This project is currently in the initialisation phase and does not review nor ac
 - [x] Setup Tests
 - [ ] Define Architecture Principles
 - [ ] Setup Architecture Tests
-- [ ] Define Domain
-- [ ] Define Basic Architecture
+- [x] Define Domain
+- [x] Define Basic Architecture
 - [x] Setup README
-- [ ] Define Roadmap to MVP
+- [x] Define Roadmap to MVP
 - [x] Setup CI Pipeline
 
 ### 02 - MVP
@@ -54,3 +54,6 @@ Thanks for these awesome resources that were used during development:
 
 - https://github.com/olivierlacan/keep-a-changelog
 - https://github.com/conventional-commits/conventionalcommits.org
+- https://c4model.com
+- https://github.com/usebruno/bruno
+- https://github.com/testcontainers/testcontainers-go
