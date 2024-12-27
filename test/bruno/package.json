@@ -1,0 +1,25 @@
+{
+  "name": "boutique-api-testing",
+  "version": "1.0.0",
+  "description": "boutique api test-suite",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baking-bread/boutique.git"
+  },
+  "keywords": [
+    "idp"
+  ],
+  "author": "baking-bread",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/baking-bread/boutique/issues"
+  },
+  "homepage": "https://github.com/baking-bread/boutique#readme",
+  "dependencies": {
+    "@usebruno/cli": "^1.36.3"
+  }
+}

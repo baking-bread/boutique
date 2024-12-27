@@ -1,33 +1,75 @@
 package domain
 
-import catalogtype "github.com/baking-bread/boutique/internal/core/domain/enum/catalog_type"
-
-// Contains a collection of templates and or packages
+// Contains a collection of services, bundles and or packages
 type Catalog struct {
-	Type catalogtype.CatalogType
+	Id       string
+	Brokers  []Broker
+	Services []Service
 }
 
-type Chart struct {
-	Catalog   Catalog
-	Path      string // item location within catalog
-	Ref       string // for versioning
-	Config    TemplateConfiguration
-	Templates []TemplateContent
+// Services offer actions
+type Service struct {
+	Id          string
+	Catalog     Catalog
+	Path        string // item location within catalog
+	Ref         string // for versioning
+	Description string
+	Output      map[string]ServiceOutput // outputs from this service
+}
 
+type ServiceOutput struct {
+	Name        string
+	Description string
+	Type        string
+}
+
+// Bundles customizes a set of services
+// By structuring a service hierarchy adding policies and more
+type Bundle struct {
+	Id        string
+	Path      string
+	Ref       string
+	Config    BundleConfig
+	Templates []TemplateContent
 	// policies
 }
 
-type TemplateConfiguration struct{}
-type TemplateContent struct{}
+type BundleConfig struct {
+	Description string
+	Tags        []string
+}
 
+type TemplateContent struct {
+	Name    string
+	Content string
+}
+
+// Brokers can validate bundle templates and execute services
+type Broker struct {
+	Id          string
+	Name        string
+	Description string
+}
+
+// Packages describe results after a bundle was personalized
 type Package struct {
-	Catalog   Catalog
-	Path      string
-	Ref       string
-	Instances []InstanceContent
+	Id         string
+	Catalog    Catalog
+	Path       string
+	Ref        string
+	TemplateId string
+	Instances  []Instance
 
 	// history
 	// status
 }
 
-type InstanceContent struct{}
+type PackageConfig struct {
+	Description string
+	Tags        []string
+}
+
+type Instance struct {
+	Name    string
+	Content string
+}

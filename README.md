@@ -10,6 +10,11 @@
 
 This project is currently in the initialisation phase and does not review nor accept merge requests.
 
+## Introduction
+
+A boutique is a small, specialized shop that offers a curated selection of products or services, typically focusing on unique, high-quality, or niche items.
+Boutiques stand out for their personalized shopping experience, exclusive inventory, and a focus on quality over quantity.
+
 ## Getting Started
 
 ### Prerequisites
@@ -25,8 +30,7 @@ This project is currently in the initialisation phase and does not review nor ac
 - [x] Setup Changelog
 - [x] Setup Makefile
 - [x] Setup Tests
-- [ ] Define Architecture Principles
-- [ ] Setup Architecture Tests
+- [x] Define Architecture Principles
 - [x] Define Domain
 - [x] Define Basic Architecture
 - [x] Setup README
@@ -54,6 +58,7 @@ Thanks for these awesome resources that were used during development:
 
 - https://github.com/olivierlacan/keep-a-changelog
 - https://github.com/conventional-commits/conventionalcommits.org
-- https://c4model.com
 - https://github.com/usebruno/bruno
-- https://github.com/testcontainers/testcontainers-go
+- https://github.com/openservicebrokerapi/servicebroker
+- https://c4model.com
+- https://12factor.net/

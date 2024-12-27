@@ -1,0 +1,30 @@
+title: "draft template"
+description: "this is a design draft"
+
+# values define how a template can be filled
+values:
+  # static values can be set (which is not realy practical but it is what it is)
+  one: "test"
+  # an array of values provides multiple options for this value
+  two: 
+    - "test"
+    - "asdf"
+    - "hello"
+    - "world"
+  # a value can be a user input with an optional type restriction
+  three:
+    type: "text"
+    kind: "input"
+  # additionally a user input can be validated against regex 
+  four:
+    type: "text"
+    kind: "regex"
+  # a value can be provided by another already existing module output
+  # the module has to be an ancestor of this instance
+  five:
+    kind: "depends"
+    path: "module.value"
+    fallback:
+      type: "text"
+      kind: "input"
+

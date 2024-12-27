@@ -1,3 +1,3 @@
 # Boutique - Architecture
 
-## Architecture Principles
+## Design Principles
