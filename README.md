@@ -15,6 +15,8 @@ This project is currently in the initialisation phase and does not review nor ac
 A boutique is a small, specialized shop that offers a curated selection of products or services, typically focusing on unique, high-quality, or niche items.
 Boutiques stand out for their personalized shopping experience, exclusive inventory, and a focus on quality over quantity.
 
+With boutique developers can offer services and curated golden paths to your organization.
+
 ## Getting Started
 
 ### Prerequisites
@@ -39,14 +41,23 @@ Boutiques stand out for their personalized shopping experience, exclusive invent
 
 ### 02 - MVP
 
-- [ ] Setup Release Pipeline
-- [ ] Setup Badges
-- [ ] Define Roadmap to Plugin System
-- [ ] Setup Codespaces
+- [ ] Catalog
+- [ ] Orchestrator
+- [ ] UI
+- [ ] Plugin Agents
+- [ ] Plugin Frontends
+- [ ] Policies
+- [ ] Identity & Access
 
 ### 03 - Plugin System
 
-### 05 - Stabilization
+- [ ] Marketplace
+- [ ] Webhook Plugin
+- [ ] Terraform Plugin
+- [ ] Kubernetes Plugin
+- [ ] Cost Agent
+
+### 04 - Stabilization
 
 ## Contributing
 
