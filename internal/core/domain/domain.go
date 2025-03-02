@@ -1,75 +1,180 @@
 package domain
 
-// Contains a collection of services, bundles and or packages
-type Catalog struct {
-	Id       string
-	Brokers  []Broker
-	Services []Service
+// Service catalog definition
+
+type Agent struct {
+	Id          string
+	Name        string
+	Description string
+	Owner       string
+	Tags        []string
+	Policies    []Policy
 }
 
-// Services offer actions
 type Service struct {
 	Id          string
-	Catalog     Catalog
-	Path        string // item location within catalog
-	Ref         string // for versioning
+	Checksum    string
+	Agent       Agent
+	Name        string
 	Description string
-	Output      map[string]ServiceOutput // outputs from this service
+	Owner       string
+	Ref         string // for versioning
+	Action      string // create, update, delete, migration, rollback
+	Inputs      []InputSchema
+	Outputs     []OutputSchema
+	Policies    []Policy
+	// Rollback Service?
 }
 
-type ServiceOutput struct {
+type Policy struct {
+	Id          string
+	Checksum    string
+	Name        string
+	Type        string // apply to read, write, delete, execute
+	Description string
+}
+
+type InputSchema struct {
+	Id          string
+	Name        string
+	Description string
+	Type        string     // string, number, boolean, object, array, component, data (means: fetching data from an agent)
+	Default     any        // can be nil
+	Component   Component  // has to be set if type is component
+	Data        DataSchema // has to be set if type is data
+	Policies    []Policy
+}
+
+type OutputSchema struct {
+	Id          string
 	Name        string
 	Description string
 	Type        string
+	Component   Component
+	Policies    []Policy
 }
 
-// Bundles customizes a set of services
-// By structuring a service hierarchy adding policies and more
-type Bundle struct {
-	Id        string
-	Path      string
-	Ref       string
-	Config    BundleConfig
-	Templates []TemplateContent
-	// policies
-}
-
-type BundleConfig struct {
-	Description string
-	Tags        []string
-}
-
-type TemplateContent struct {
-	Name    string
-	Content string
-}
-
-// Brokers can validate bundle templates and execute services
-type Broker struct {
+type AttributeSchema struct {
 	Id          string
 	Name        string
 	Description string
+	Type        string
+	Optional    bool
+	Policies    []Policy
 }
 
-// Packages describe results after a bundle was personalized
-type Package struct {
-	Id         string
-	Catalog    Catalog
-	Path       string
-	Ref        string
-	TemplateId string
-	Instances  []Instance
-
-	// history
-	// status
-}
-
-type PackageConfig struct {
+type Component struct {
+	Id          string
+	Name        string
+	Checksum    string
 	Description string
-	Tags        []string
+	Ref         string // for versioning
+	Agent       Agent
+	Attributes  []AttributeSchema
+	Policies    []Policy
+	// Include a hierarchy?
+}
+
+type DataSchema struct {
+	Id          string
+	Name        string
+	Description string
+	Type        string
+	Policies    []Policy
+}
+
+type InputMapping struct {
+	Id          string
+	InputSchema InputSchema
+	Mapping     string // string template
+}
+
+type Step struct {
+	Id            string
+	Name          string
+	Description   string
+	Service       Service
+	InputMappings []InputMapping
+}
+
+type Template struct {
+	Id          string
+	Name        string
+	Checksum    string
+	Description string
+	Ref         string // for versioning
+	Steps       []Step
+	Policies    []Policy
+}
+
+// Plugins can extend catalog items with additional attributes
+// The agent manages the value of the attributes
+type Extension struct {
+	Id          string
+	Name        string
+	Category    string // template, service, component, agent
+	Description string
+	Owner       string
+	Ref         string // for versioning
+	Attributes  []AttributeSchema
+	Policies    []Policy
+}
+
+// Instances
+
+type Input struct {
+	Schema InputSchema
+	Value  any
+}
+
+type Output struct {
+	Schema OutputSchema
+	Value  any
+}
+
+type Data struct {
+	Schema DataSchema
+	Value  any
+}
+
+type ServiceRun struct {
+	Id       string
+	Start    string
+	End      string
+	Agent    Agent
+	Service  Service
+	Issuer   string
+	Owner    string
+	Inputs   []Input
+	Outputs  []Output
+	Status   string
+	Policies []Policy
+}
+
+type TemplateRun struct {
+	Id       string
+	Issuer   string
+	Owner    string
+	Steps    []ServiceRun
+	Policies []Policy
+}
+
+type Link struct {
+	Id       string
+	Issuer   string
+	Owner    string
+	Instance Instance
+	Service  ServiceRun
+	Policies []Policy
 }
 
 type Instance struct {
-	Name    string
-	Content string
+	Id         string
+	Component  Component
+	Agent      Agent
+	Issuer     string
+	Owner      string
+	Attributes []any
+	Links      []Link
+	Policies   []Policy
 }
